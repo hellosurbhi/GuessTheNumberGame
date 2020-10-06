@@ -1,14 +1,14 @@
 import random
 import sys
 
-finalAnswer = random.randint(1,100)
+# finalAnswer = random.randint(1,100)
+finalAnswer = 50
 
 print('Hello. What is your name?')
 name = input()
 print('Well, ' + name + " let's play a game.")
 print("Guess the number I'm thinking of")
-print("You will get 5 chances to guess the number!")
-print("Hint: It's been 1 and 100.")
+print("It's between 1 and 100 and you have 5 chances to take a guess")
 totalGuesses = 0
 
 def takeAGuess(totalGuesses): 
@@ -32,11 +32,12 @@ def takeAGuess(totalGuesses):
             print('Good job, ' + name + '! You guessed my number in 1 guess!')
             sys.exit(0)
           else:
-                print('Good job, ' + name + '! You guessed my number in ' + str(totalGuesses) + ' guess!')
+                print('Good job, ' + name + '! You guessed my number in ' + str(totalGuesses) + ' guesses!')
                 sys.exit(0)
       if totalGuesses == 5:
         if int(guess) != finalAnswer:
-          print('The number I was thinking of was ' + str(finalAnswer))
+          print('The number I was thinking of was ' + str(finalAnswer) + '.')
+          print('Better luck next time.')
           sys.exit(0)
   except ValueError:
     print('That is not a number')
